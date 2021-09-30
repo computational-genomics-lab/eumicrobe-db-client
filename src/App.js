@@ -4,8 +4,7 @@ import './App.css';
 import Header from "./components/pages/Header";
 import NAV from "./NAV";
 function App() {
- function closehandler() {Sethandler(false);}
-
+ 
   return (
     <div className="App">
       <NAV />
