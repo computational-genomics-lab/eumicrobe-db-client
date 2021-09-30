@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import './App.css';
 import Header from "./components/pages/Header";
-import Axios from "axios";
 import NAV from "./NAV";
 function App() {
   const [handler,Sethandler] = useState(true);
