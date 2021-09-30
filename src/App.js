@@ -4,13 +4,6 @@ import './App.css';
 import Header from "./components/pages/Header";
 import NAV from "./NAV";
 function App() {
-  const [handler,Sethandler] = useState(true);
-  const [GenomeList, setGenomeList] = useState([]);
-  const getGenomes = () => {
-    Axios.get("http://localhost:3001/organism").then((response) => {
-      setGenomeList(response.data);
-    });
-  };
  function closehandler() {Sethandler(false);}
 
   return (
