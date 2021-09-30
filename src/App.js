@@ -4,6 +4,10 @@ import './App.css';
 import Header from "./components/pages/Header";
 import NAV from "./NAV";
 function App() {
+  const [handler,Sethandler] = useState(true);
+  const [GenomeList, setGenomeList] = useState([]);
+
+ function closehandler() {Sethandler(false);}
  
   return (
     <div className="App">
@@ -14,8 +18,7 @@ function App() {
       <button className="btn" 
        onClick={closehandler}> Close </button>
 
-      <button className="btn" 
-      onClick={handler && getGenomes} >
+     
       
         Show Genomes </button>
        {GenomeList.map((val,key)=>{
