@@ -5,9 +5,9 @@ import {
   JBrowseLinearGenomeView,
 } from '@jbrowse/react-linear-genome-view'
 
-import fasta from '../../genome_data/SSR_files/Phyag_NZFS3770.fna'
-import fai from '../../genome_data/SSR_files/Phyag_NZFS3770.fna.fai'
-// import ssrbw from '../../data/SSR_files/Phyag_NZFS3770.ssr.bw'
+import fasta from '../genome_data/Phyag_NZFS3770.fna'
+import fai from '../genome_data/Phyag_NZFS3770.fna.fai'
+import ssrbw from '../genome_data/Phyag_NZFS3770.ssr.bw'
 
 const assembly = {
   name: 'Phyag_NZFS3770',
@@ -49,6 +49,17 @@ const tracks = [
         },
       },
     },
+  },
+  {
+    trackID: "SSR_phy",
+    name: "SSR",
+    assemblyNames:["Phyag_NZFS3770"],
+    type: "QuantitativeTrack",
+    adapter: {
+            type: "BigWig",
+            bigWigLocation: { uri: ssrbw },
+    }
+
   },
 ]
 
