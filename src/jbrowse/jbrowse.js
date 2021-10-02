@@ -50,6 +50,7 @@ const tracks = [
       },
     },
   },
+  /*
   {
     trackID: "SSR_phy",
     name: "SSR",
@@ -61,6 +62,7 @@ const tracks = [
     }
 
   },
+  */
 ]
 
 const defaultSession = {
