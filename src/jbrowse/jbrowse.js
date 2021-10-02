@@ -5,37 +5,28 @@ import {
   JBrowseLinearGenomeView,
 } from '@jbrowse/react-linear-genome-view'
 
+import fasta from '../../genome_data/SSR_files/Phyag_NZFS3770.fna'
+import fai from '../../genome_data/SSR_files/Phyag_NZFS3770.fna.fai'
+// import ssrbw from '../../data/SSR_files/Phyag_NZFS3770.ssr.bw'
+
 const assembly = {
-  name: 'GRCh38',
+  name: 'Phyag_NZFS3770',
   sequence: {
     type: 'ReferenceSequenceTrack',
     trackId: 'GRCh38-ReferenceSequenceTrack',
     adapter: {
-      type: 'BgzipFastaAdapter',
+      type: 'IndexedFastaAdapter',
       fastaLocation: {
-        uri:
-          'https://s3.amazonaws.com/jbrowse.org/genomes/GRCh38/fasta/GRCh38.fa.gz',
+        uri: fasta,
+          
       },
       faiLocation: {
-        uri:
-          'https://s3.amazonaws.com/jbrowse.org/genomes/GRCh38/fasta/GRCh38.fa.gz.fai',
+        uri: fai,
       },
-      gziLocation: {
-        uri:
-          'https://s3.amazonaws.com/jbrowse.org/genomes/GRCh38/fasta/GRCh38.fa.gz.gzi',
-      },
+      
     },
   },
   aliases: ['hg38'],
-  refNameAliases: {
-    adapter: {
-      type: 'RefNameAliasAdapter',
-      location: {
-        uri:
-          'https://s3.amazonaws.com/jbrowse.org/genomes/GRCh38/hg38_aliases.txt',
-      },
-    },
-  },
 }
 
 const tracks = [
@@ -43,7 +34,7 @@ const tracks = [
     type: 'FeatureTrack',
     trackId: 'ncbi_refseq_109_hg38',
     name: 'NCBI RefSeq (GFF3Tabix)',
-    assemblyNames: ['GRCh38'],
+    assemblyNames: ['Phyag_NZFS3770'],
     category: ['Annotation'],
     adapter: {
       type: 'Gff3TabixAdapter',
@@ -96,7 +87,6 @@ function View() {
   const state = createViewState({
     assembly,
     tracks,
-    location: '10:29,838,737..29,838,819',
     defaultSession,
   })
   return (
