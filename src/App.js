@@ -4,6 +4,7 @@ import './App.css';
 import Header from "./components/pages/Header";
 import Axios from "axios";
 import NAV from "./NAV";
+import CsvReader from "./components/csvreader";
 function App() {
   const [handler,Sethandler] = useState(true);
   const [GenomeList, setGenomeList] = useState([]);
@@ -32,6 +33,7 @@ function App() {
        })} 
        <a href = "http://localhost:5000/?config=test_data%2Fvolvox%2Fconfig.json&session=local-gd8yT_t0V"> JBrowse web application </a>
     </div>
+    <div> <CsvReader /> </div>
     </div>
     
   )} 
