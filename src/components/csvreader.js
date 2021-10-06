@@ -4,7 +4,7 @@ import { useState } from 'react';
 export default function CsvReader(){
     const [csvFile, setCsvFile] = useState();
     const [csvArray, setCsvArray] = useState([]);
-    // [{name: "", age: 0, rank: ""},{name: "", age: 0, rank: ""}]
+    // [{id: "", length: 0, organism_name: ""},{id: "", length: 0, organism_name: ""}]
 
     const processCSV = (str, delim=',') => {
         const headers = str.slice(0,str.indexOf('\n')).split(delim);
@@ -61,17 +61,17 @@ export default function CsvReader(){
             <div>
                 <table>
                     <thead>
-                        <th>Name</th>
-                        <th>Age</th>
-                        <th>Rank</th>
+                        <th>Id</th>
+                        <th>length</th>
+                        <th>Organism Name</th>
                     </thead>
                     <tbody>
                         {
                             csvArray.map((item, i) => (
                                 <tr key={i}>
-                                    <td>{item.name}</td>
-                                    <td>{item.age}</td>
-                                    <td>{item.rank}</td>
+                                    <td>{item.id}</td>
+                                    <td>{item.length}</td>
+                                    <td>{item.organism_name}</td>
                                 </tr>
                             ))
                         }
