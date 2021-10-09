@@ -82,3 +82,22 @@ export default function CsvReader(){
     );
 
 }
+
+// const fs = require('fs');
+// const papa = require('papaparse');
+// const file = fs.createReadStream('public/organism_list.csv');
+// var count = 0; // cache the running count
+// papa.parse(file, {
+//     worker: true, 
+//     step: function(result) {
+        
+//     },
+//     complete: function(results, file) {
+//         console.log('parsing complete read', count, 'records.'); 
+//     }
+// });
+// function CsvReader() {
+//     document.write(csv_write)  
+// }
+// export default CsvReader;
+

@@ -22,6 +22,9 @@ const Navbar = () => {
             <NavLink to='../../jbrowse/jbrowse' activeStyle>
              JBrowse 
            </NavLink>
+           <NavLink to = '/csvupload' activeStyle>
+             CSV upload
+             </NavLink>
           <NavLink to='/about' activeStyle>
             About
           </NavLink>

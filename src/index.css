@@ -9,7 +9,9 @@
 body {
   font-family: 'Poppins', sans-serif;
 }
-
+ul{
+  text-align: justify;
+}
 .container {
   max-width: 500px;
   margin: 30px auto;
