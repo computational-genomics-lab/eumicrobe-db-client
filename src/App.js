@@ -15,9 +15,6 @@ function App() {
   return ( 
     <div className="App">
       <NAV />
-      {/* <div>
-        d3.csv(data, function(data) { document.write(data)});
-      </div> */}
       
       <Header title="EumicrobeDB"/>
     <div> <JSXReader /> </div>
