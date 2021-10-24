@@ -3,11 +3,7 @@ import './App.css';
 import JSXReader from "./components/JSXReader";
 import Header from "./components/pages/Header";
 import NAV from "./NAV";
-// import * as d3 from 'd3';
-// import data from 'public/organism_list.csv';
-
-
-
+import Trees from "./components/tree";
 
 
 function App() {
@@ -17,7 +13,7 @@ function App() {
       <NAV />
       
       <Header title="EumicrobeDB"/>
-    <div> <JSXReader /> </div>
+    <div> <Trees /> </div>
     </div>
     
   )} 

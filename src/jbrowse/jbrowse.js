@@ -117,39 +117,45 @@ import {
   createViewState,
   JBrowseLinearGenomeView,
 } from '@jbrowse/react-linear-genome-view'
+// import fasta from '../genome_data/{props.id}.fna'
+// import fai from '../genome_data/{props.id}.fna.fai'
+// import gff  from '../genome_data/{props.id}.sorted.gff.gz'
+// import gfftbi from '../genome_data/{props.id}.sorted.gff.gz.tbi'
+// import ssrbw from '../genome_data/{props.id}.bw'
+function View(props) {
 
-import fasta from '../genome_data/Phyag_NZFS3770.fna'
-import fai from '../genome_data/Phyag_NZFS3770.fna.fai'
-import gff from '../genome_data/Phyag_NZFS3770.sorted.gff.gz'
-import gfftbi from '../genome_data/Phyag_NZFS3770.sorted.gff.gz.tbi'
-import ssrbw from '../genome_data/Phyag_NZFS3770.ssr.bw'
+  const fasta= require(`../genome_data/${props.id}.fna`)  
+  const fai= require(`../genome_data/${props.id}.fna.fai`)
+  const gff= require(`../genome_data/${props.id}.sorted.gff.gz`)
+  const gfftbi = require(`../genome_data/${props.id}.sorted.gff.gz.tbi`)
+  const ssrbw = require(`../genome_data/${props.id}.bw`)
 
-const assembly = {
-  name: 'Phyag_NZFS3770',
-  sequence: {
-    type: 'ReferenceSequenceTrack',
-    trackId: 'GRCh38-ReferenceSequenceTrack',
-    adapter: {
-      type: 'IndexedFastaAdapter',
-      fastaLocation: {
-        uri: fasta,
-          
-      },
-      faiLocation: {
-        uri: fai,
-      },
-      
+const assembly ={
+  name: `${props.id}`,
+sequence: {
+  type: 'ReferenceSequenceTrack',
+  trackId: 'GRCh38-ReferenceSequenceTrack',
+  adapter: {
+    type: 'IndexedFastaAdapter',
+    fastaLocation: {
+      uri: fasta,
+        
     },
+    faiLocation: {
+      uri: fai,
+    },
+    
   },
-  aliases: ['hg38'],
-}
+},
+aliases: ['hg38'],}
 
-const tracks = [
+
+const tracks=[
   {
     type: 'FeatureTrack',
-    trackId: 'Phyag_NZFS3770_gff',
-    name: 'Phyag_NZFS3770 (GFF3Tabix)',
-    assemblyNames: ['Phyag_NZFS3770'],
+    trackId: `${props.id}_gff`,
+    name: `${props.id} (GFF3Tabix)`,
+    assemblyNames: [`${props.id}`],
     category: ['Genes'],
     adapter: {
       type: 'Gff3TabixAdapter',
@@ -167,18 +173,16 @@ const tracks = [
   {
     trackId: "SSR_phy",
     name: "SSR",
-    assemblyNames:["Phyag_NZFS3770"],
+    assemblyNames:[`${props.id}`],
     type: "QuantitativeTrack",
     adapter: {
             type: "BigWigAdapter",
-            bigWigLocation: { uri: ssrbw },
+            bigWigLocation: { uri: ssrbw},
     }
 
   },
-  
 ]
-
-const defaultSession = {
+const defaultSession = {      
   name: 'My session',
   view: {
     id: 'linearGenomeView',
@@ -197,11 +201,11 @@ const defaultSession = {
       },
       {
         type: 'FeatureTrack',
-        configuration: 'Phyag_NZFS3770_gff',
+        configuration: `${props.id}_gff`,
         displays: [
           {
             type: 'LinearBasicDisplay',
-            configuration: 'Phyag_NZFS3770_gff-LinearBasicDisplay',
+            configuration: `${props.id}_gff-LinearBasicDisplay`,
           },
         ],
       },
@@ -209,7 +213,8 @@ const defaultSession = {
   },
 }
 
-function View() {
+
+
   const state = createViewState({
     assembly,
     tracks,
@@ -222,4 +227,4 @@ function View() {
     )
 }
 
-export default View
+export default View;
