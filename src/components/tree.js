@@ -54,48 +54,62 @@ const treeData = {
       index: 3, },
 
 
-     }},
-  //     
-  //       'Phyca_4032':{
-  //         label: 'Phyca_4032',
-  //         index:3,
-  //       },
-  //       'Phyca_4032':{
-  //         label: 'Phyca_4032',
-  //         index:3,
-  //       },
-  //       'Phyca_4032':{
-  //         label: 'Phyca_4032',
-  //         index:3,
-  //       },
-  //       'Phyca_4032':{
-  //         label: 'Phyca_4032',
-  //         index:3,
-  //       },
-  //       'Phyca_4032':{
-  //         label: 'Phyca_4032',
-  //         index:3,
-  //       },
-  //       'Phyca_4032':{
-  //         label: 'Phyca_4032',
-  //         index:3,
-  //       },  
-  //       'Phyca_4032':{
-  //         label: 'Phyca_4032',
-  //         index:3,
-  //       },
-  //       'Phyca_4032':{
-  //         label: 'Phyca_4032',
-  //         index:3,
-  //       },
-  //       'Phyca_4032':{
-  //         label: 'Phyca_4032',
-  //         index:3,
-  //       },
+     }
+    },
+    'first-level-node-5': {
+      label: 'Phytophthora cambivora',
+      index: 4,
+      nodes:{}},
 
-  //   }
+      'first-level-node-6': {
+        label: 'Phytophthora capsici',
+        index: 5,
+        nodes:{}},
+   'first-level-node-7': {
+      label: 'Phytophthora chlamydospora',
+       index: 6,
+      nodes:{}},
+      'first-level-node-8': {
+        label: 'Phytophthora cinnamomi',
+         index: 7,
+        nodes:{}},
+        'first-level-node-9': {
+          label: 'Phytophthora cryptogea',
+           index: 8,
+          nodes:{}},
+          'first-level-node-10': {
+            label: 'Phytophthora fragariae',
+             index: 9,
+            nodes:{}},
+  
+'first-level-node-11':{
+  label: 'Phytophthora gonapodyides',
+             index: 10,
+            nodes:{}},
+'first-level-node-12':{
+  label: 'Phytophthora idaei',
+             index: 11,
+            nodes:{}},
+            'first-level-node-13':{
+              label: 'Phytophthora infestans',
+                         index: 12,
+                        nodes:{}},
+'first-level-node-14':{
+  label: 'Phytophthora kernoviae',
+             index: 13,
+            nodes:{}},
+            'first-level-node-15':{
+              label: 'Phytophthora litchii',
+                         index: 14,
+                        nodes:{}},
+   'first-level-node-16':{
+      label: 'Phytophthora megakarya',
+      index: 15,
+       nodes:{}},
 
+  
 };
+
 function Trees(){return(
   <TreeMenu data={treeData} />
 )}

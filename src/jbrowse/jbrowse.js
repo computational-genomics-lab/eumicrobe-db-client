@@ -117,18 +117,15 @@ import {
   createViewState,
   JBrowseLinearGenomeView,
 } from '@jbrowse/react-linear-genome-view'
-// import fasta from '../genome_data/{props.id}.fna'
-// import fai from '../genome_data/{props.id}.fna.fai'
-// import gff  from '../genome_data/{props.id}.sorted.gff.gz'
-// import gfftbi from '../genome_data/{props.id}.sorted.gff.gz.tbi'
-// import ssrbw from '../genome_data/{props.id}.bw'
+
 function View(props) {
 
   const fasta= require(`../genome_data/${props.id}.fna`)  
   const fai= require(`../genome_data/${props.id}.fna.fai`)
-  const gff= require(`../genome_data/${props.id}.sorted.gff.gz`)
-  const gfftbi = require(`../genome_data/${props.id}.sorted.gff.gz.tbi`)
+  const gff= require("../genome_data/Phyag_NZFS3770_genbank.sorted.gff.gz")
+  const gfftbi = require("../genome_data/Phyag_NZFS3770_genbank.sorted.gff.gz.tbi")
   const ssrbw = require(`../genome_data/${props.id}.bw`)
+  // const rxlr = require(`../genome_data/${props.id}.rxlr.bw`)
 
 const assembly ={
   name: `${props.id}`,
@@ -181,6 +178,17 @@ const tracks=[
     }
 
   },
+  // {
+  //   trackId: "rxlr",
+  //   name: "RXLR",
+  //   assemblyNames:[`${props.id}`],
+  //   type: "QuantitativeTrack",
+  //   adapter: {
+  //           type: "BigWigAdapter",
+  //           bigWigLocation: { uri: rxlr},
+  //   }
+
+  // },
 ]
 const defaultSession = {      
   name: 'My session',
